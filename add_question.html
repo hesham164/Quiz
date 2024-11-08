@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Question</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Firebase SDK -->
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+      import { getDatabase, ref, set, push } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyAecoiGbW97TIl29mD3f7Zr5PQSTytAQ3k",
+        authDomain: "quize-42032.firebaseapp.com",
+        databaseURL: "https://quize-42032-default-rtdb.firebaseio.com/",
+        projectId: "quize-42032",
+        storageBucket: "quize-42032.appspot.com",
+        messagingSenderId: "402409084375",
+        appId: "1:402409084375:web:e564518e118e786e10a792",
+        measurementId: "G-XDC229BN4W"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const database = getDatabase(app);
+      window.db = database;
+      window.ref = ref;
+      window.set = set;
+      window.push = push;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Add a New Question</h1>
+        <form id="quizForm">
+            <label for="question">Question:</label>
+            <input type="text" id="question" required>
+
+            <label for="choice1">Choice 1:</label>
+            <input type="text" id="choice1" required>
+            <input type="radio" name="correct" value="0" required> Correct
+
+            <label for="choice2">Choice 2:</label>
+            <input type="text" id="choice2" required>
+            <input type="radio" name="correct" value="1" required> Correct
+
+            <label for="choice3">Choice 3:</label>
+            <input type="text" id="choice3" required>
+            <input type="radio" name="correct" value="2" required> Correct
+
+            <label for="choice4">Choice 4:</label>
+            <input type="text" id="choice4" required>
+            <input type="radio" name="correct" value="3" required> Correct
+
+            <button type="submit">Add Question</button>
+        </form>
+        <a href="index.html">Go to Flashcards</a>
+    </div>
+    <script src="add_question.js"></script>
+</body>
+</html>
